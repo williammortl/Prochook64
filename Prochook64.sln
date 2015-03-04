@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prochook64", "Prochook64\Prochook64.csproj", "{75AD5F74-EC59-4DE5-8832-0D8152621116}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "64BitHookDLL", "64BitHookDLL\64BitHookDLL.vcxproj", "{A68C4D21-9E08-4906-88A1-1EDE5C6A898C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{D89EDD35-6754-46B7-8566-607C68C0A056}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75AD5F74-EC59-4DE5-8832-0D8152621116}.Debug|x64.ActiveCfg = Debug|x64
+		{75AD5F74-EC59-4DE5-8832-0D8152621116}.Debug|x64.Build.0 = Debug|x64
+		{75AD5F74-EC59-4DE5-8832-0D8152621116}.Release|x64.ActiveCfg = Release|x64
+		{75AD5F74-EC59-4DE5-8832-0D8152621116}.Release|x64.Build.0 = Release|x64
+		{A68C4D21-9E08-4906-88A1-1EDE5C6A898C}.Debug|x64.ActiveCfg = Debug|x64
+		{A68C4D21-9E08-4906-88A1-1EDE5C6A898C}.Debug|x64.Build.0 = Debug|x64
+		{A68C4D21-9E08-4906-88A1-1EDE5C6A898C}.Release|x64.ActiveCfg = Release|x64
+		{A68C4D21-9E08-4906-88A1-1EDE5C6A898C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

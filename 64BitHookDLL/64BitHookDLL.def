@@ -1,0 +1,7 @@
+LIBRARY 64BitHookDLL
+SECTIONS .sd_64bithookdll SHARED READ WRITE
+EXPORTS
+	StartMonitoring @1
+	StopMonitoring @2
+	GetTextBuffer @3
+	GetKeyBuffer @4
