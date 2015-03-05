@@ -188,7 +188,7 @@ void WINAPI GetKeyBuffer(LPSTR lpszKeyBufferOut, size_t * plKeyBufferSize)
  */
 BOOL WINAPI ShadowExtTextOutA(HDC textdc, int x, int y, UINT fuoptions, CONST RECT *lprc, LPCSTR lptext, UINT cb, CONST INT *lpdx)
 {
-	BOOL				bRet = FALSE;
+	BOOL bRet = FALSE;
 
 	// write to text buffer if it isnt a glyph
 	if ((fuoptions & ETO_GLYPH_INDEX) != ETO_GLYPH_INDEX)
@@ -206,10 +206,10 @@ BOOL WINAPI ShadowExtTextOutA(HDC textdc, int x, int y, UINT fuoptions, CONST RE
 
 BOOL WINAPI ShadowExtTextOutW(HDC textdc, int x, int y, UINT fuoptions, CONST RECT *lprc, LPCWSTR lptext, UINT cb, CONST INT *lpdx)
 {
-	char				szText[MAXTEXTOUT] = NULLSTR;
-	int					iLenText = 0;
-	BOOL				bRet = FALSE;
-	BOOL				bUsed = FALSE;
+	char szText[MAXTEXTOUT] = NULLSTR;
+	int iLenText = 0;
+	BOOL bRet = FALSE;
+	BOOL bUsed = FALSE;
 
 	// write to text buffer if it isnt a glyph
 	if ((fuoptions & ETO_GLYPH_INDEX) != ETO_GLYPH_INDEX)
@@ -228,7 +228,7 @@ BOOL WINAPI ShadowExtTextOutW(HDC textdc, int x, int y, UINT fuoptions, CONST RE
 
 BOOL WINAPI ShadowTextOutA(HDC textdc, int x, int y, LPCSTR lptext, int cb)
 {
-	BOOL				bRet = FALSE;
+	BOOL bRet = FALSE;
 
 	// write text buffer
 	WriteToTextBuffer(lptext, cb);
@@ -243,10 +243,10 @@ BOOL WINAPI ShadowTextOutA(HDC textdc, int x, int y, LPCSTR lptext, int cb)
 
 BOOL WINAPI ShadowTextOutW(HDC textdc, int x, int y, LPCWSTR lptext, int cb)
 {
-	char				szText[MAXTEXTOUT] = NULLSTR;
-	int					iLenText = 0;
-	BOOL				bRet = FALSE;
-	BOOL				bUsed = FALSE;
+	char szText[MAXTEXTOUT] = NULLSTR;
+	int iLenText = 0;
+	BOOL bRet = FALSE;
+	BOOL bUsed = FALSE;
 
 	// write text buffer
 	iLenText = WideCharToMultiByte(CP_THREAD_ACP, WC_NO_BEST_FIT_CHARS, lptext, cb, szText, MAXTEXTOUT, "*", &bUsed);
@@ -262,9 +262,9 @@ BOOL WINAPI ShadowTextOutW(HDC textdc, int x, int y, LPCWSTR lptext, int cb)
 
 BOOL WINAPI ShadowTerminateProcess(HANDLE hProcess, UINT uiExitCode)
 {
-	BOOL				bRet = FALSE;
-	BOOL				bAllow = TRUE;
-	HANDLE				hProcessDuplicate = NULL;
+	BOOL bRet = FALSE;
+	BOOL bAllow = TRUE;
+	HANDLE hProcessDuplicate = NULL;
 
 	// check to make sure that this process isnt being protected
 	DuplicateHandle(GetCurrentProcess(), hProcess, GetCurrentProcess(), (LPHANDLE)&hProcessDuplicate, PROCESS_QUERY_INFORMATION, TRUE, 0);
@@ -397,7 +397,7 @@ void WINAPI DestroyAllHooks(void)
 
 void WINAPI CreateHook(unsigned __int64 ui64AddressFunc, unsigned __int64 ui64AddressShadowFunc, PHOOKREC phr)
 {
-	DWORD				dwOldAttr;
+	DWORD dwOldAttr;
 
 	// setup hookrec structure
 	phr->ui64AddressFunc = ui64AddressFunc;
