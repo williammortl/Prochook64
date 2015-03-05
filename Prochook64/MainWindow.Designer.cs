@@ -121,7 +121,7 @@
             this.Controls.Add(this.keyText);
             this.Controls.Add(this.hookText);
             this.Name = "MainWindow";
-            this.Text = "64 Bit Prochook Test";
+            this.Text = "64 Bit Prochook Test by William Mortl";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
