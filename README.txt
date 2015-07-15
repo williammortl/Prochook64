@@ -1,5 +1,14 @@
 64-Bit Windows Prochook Example
+
 by William Mortl
+http://www.williammortl.com
+(c)2015
+
+Written in C++ / C# - Microsoft Visual Studio 2013 for Win64 API / Microsoft .NET 4.5
+There is no warranty implied with this code, and it is not to be used for commercial purposes without proper recompence. Educational use is fine as long as appropriate citation is given.
+
+NOTES:
+------
 
 This example project uses a 64-bit Windows prochook to hook the following Windows API calls:
 
