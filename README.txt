@@ -37,13 +37,13 @@ FF E0
 
 If we want to pass the call on to the original procedure from the Shadow procedure, we simply re-write the original first 12 bytes over top of the procedure, call the procedure, and then re-write our 12 byte jump code back when complete.
 
-On a personal note, I have been working with procedure hooks since 1997. I first implemented Matt Pietreks's 16-bit prochook for Windows 3.11 and Windows 95 from his book "Windows Internals" in 1997, you can find Matt Pietrek's book here:
+On a personal note, I have been working with procedure hooks since 1997. I first implemented Matt Pietreks's 16-bit prochook for Windows 3.11 and Windows 95 from his book "Windows Internals" in 1997. You can find Matt Pietrek's book here:
 
 http://www.amazon.com/Windows-Internals-Implementation-Operating-Environment/dp/0201622173
 
-Next, I worked with another engineer (who is quite brilliant) on implementing a 32-bit prochook for Windows 9x operating systems. This prochook required a call to the VXD driver API call PageModifyPermissions. Due to Windows 9x's wonky architecture, this was the most difficult of all the prochooks to implement correctly. 
+Next, I worked with another engineer (who was / is quite brilliant) on implementing a 32-bit prochook for Windows 9x operating systems. This prochook required a call to the VXD driver API call PageModifyPermissions. Due to Windows 9x's wonky architecture, this was the most difficult of all the prochooks to implement correctly. 
 
-While finalizing the Windows 9x prochook I created a 32-bit Windows NT based procedure hook (which still works to this day, even on 64-bit Windows 8.1). The 32-bit procedure hook ONLY hooks and works with 32-bit applications. The main difference between the 32-bit prochook and my new 64-bit prochook is the assembly instructions which are written over top of the beginning of the procedure. The 32-bit prochook only needs to write 5 bytes as opposed to the 64-bit prochook which needs to write 12 bytes. The 5 bytes are (in hex):
+While finalizing the Windows 9x prochook I created a 32-bit Windows NT based procedure hook (which still works to this day, even on 64-bit Windows 8.1). The 32-bit procedure hook ONLY hooks and works with 32-bit applications. The main difference between the 32-bit prochook and my new 64-bit prochook are the assembly instructions which are written over the beginning of the procedure. The 32-bit prochook only needs to write 5 bytes as opposed to the 64-bit prochook which needs to write 12 bytes. The 5 bytes are (in hex):
 
 E9 {32 bit relative address of where you need to jump to}
 
