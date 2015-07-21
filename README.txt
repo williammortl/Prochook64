@@ -43,7 +43,7 @@ http://www.amazon.com/Windows-Internals-Implementation-Operating-Environment/dp/
 
 Next, I worked with another engineer (who was / is quite brilliant) on implementing a 32-bit prochook for Windows 9x operating systems. This prochook required a call to the VXD driver API call PageModifyPermissions. Due to Windows 9x's wonky architecture, this was the most difficult of all the prochooks to implement correctly. 
 
-While finalizing the Windows 9x prochook I created a 32-bit Windows NT based procedure hook (which still works to this day, even on 64-bit Windows 8.1). The 32-bit procedure hook ONLY hooks and works with 32-bit applications. The main difference between the 32-bit prochook and my new 64-bit prochook are the assembly instructions which are written over the beginning of the procedure. The 32-bit prochook only needs to write 5 bytes as opposed to the 64-bit prochook which needs to write 12 bytes. The 5 bytes are (in hex):
+While finalizing the Windows 9x prochook I created a 32-bit Windows NT based procedure hook (which still works to this day, even on 64-bit Windows 8.1). The 32-bit procedure hook ONLY hooks and works with 32-bit applications. The main difference between the 32-bit prochook and my new 64-bit prochook are the assembly instructions which are written over the beginning of the procedure. The 32-bit prochook only needs to write 5 bytes over top of the function whereas the 64-bit prochook which needs to write 12 bytes. The 5 bytes are (in hex):
 
 E9 {32 bit relative address of where you need to jump to}
 
