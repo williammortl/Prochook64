@@ -1,5 +1,4 @@
-﻿
-namespace Prochook64
+﻿namespace Prochook64
 {
     using System.Runtime.InteropServices;
     using System.Security;
